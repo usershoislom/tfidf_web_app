@@ -24,12 +24,12 @@
 
 3. Запустите контейнер:
    ```bash
-   docker run -p 8000:8000 tfidf-analyzer
+   docker run -p 8081:8000 tfidf-analyzer uvicorn main:app --host 0.0.0.0 --port 8000
    
 4. Перейдите в браузере:
 
    ```bash
-   http://localhost:8000
+   http://localhost:8081
    
 
 ### Вариант 2: Запуск без Docker (локально)
