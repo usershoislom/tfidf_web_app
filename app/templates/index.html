@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TF-IDF Analyzer</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Загрузка текстового файла</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt" required>
+        <input type="submit" value="Загрузить">
+    </form>
+
+    {% if table %}
+        <h2 style="text-align: center;">Результаты анализа</h2>
+        <table border="1">
+            <tr>
+                <th>Слово</th>
+                <th>TF</th>
+                <th>IDF</th>
+            </tr>
+            {% for row in table %}
+            <tr>
+                <td>{{ row.word }}</td>
+                <td>{{ row.tf }}</td>
+                <td>{{ "%.5f"|format(row.idf) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
