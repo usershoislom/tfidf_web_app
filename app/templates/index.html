@@ -37,6 +37,7 @@
         <h2 style="text-align: center;">Результаты анализа</h2>
         <table border="1">
             <tr>
+                 <th>#</th>
                 <th>Слово</th>
                 <th>TF</th>
                 <th>IDF</th>
@@ -44,6 +45,7 @@
             </tr>
             {% for row in table %}
             <tr>
+                <td>{{ loop.index }}</td>
                 <td>{{ row.word }}</td>
                 <td>{{ row.tf }}</td>
                 <td>{{ "%.5f"|format(row.idf) }}</td>

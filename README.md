@@ -20,7 +20,7 @@
 
 2. Соберите образ:
    ```bash
-   docker build -t tfidf-analyzer .
+   docker buildx build -t tfidf-analyzer .
 
 3. Запустите контейнер:
    ```bash
@@ -39,8 +39,10 @@
     git clone git@github.com:usershoislom/tfidf_web_app.git   
     cd tfidf_web_app
    
-2. Установите зависимости:
+2. Создайте виртуальное окружение и установите зависимости:
    ```bash
+   python3 -m venv venv
+   source venv/bin/activate # .\venv\Scripts\activate для Windows
    pip install -r requirements.txt
 
 3. Запустите приложение:
